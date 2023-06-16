@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from urllib.parse import unquote
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,8 +79,11 @@ WSGI_APPLICATION = 'companyrep.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sentimentdb',
+        'USER': 'postgres',
+        'PASSWORD': 'hi123',
+        'HOST': 'localhost',
     }
 }
 
@@ -123,3 +128,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# settings.py
+
+TWITTER_API_KEY = "ZBjEwhSaKA8UXsOTNhnUglT08"
+TWITTER_API_SECRET_KEY = "W6mnthGDcP7OeVisWxYGBR04HQa63Uyb6hMgE5HqKegadnw39U"
+TWITTER_ACCESS_TOKEN = "709522188445941761-2D9hwAj8994xbVKDEglyU7YxsTa0QuM"
+TWITTER_ACCESS_TOKEN_SECRET = "45dpofJrbZj2VTKcxmNtiHVosaoixJBJKB6bawvDxDmJA"
+TWITTER_BEARER_TOKEN ='AAAAAAAAAAAAAAAAAAAAAIveoAEAAAAABXy8h4g6VpCcpakxW1odOGYqReU%3DrWi0KdteYk0qOljqQkaPTymlLVFLmagzM0c3OD0ceJQEoDPyuf'

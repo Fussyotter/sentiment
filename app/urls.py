@@ -8,4 +8,5 @@ urlpatterns = [
          views.CommentListByCompany.as_view(), name='company-comment-list'),
     path('comments/', views.CommentList.as_view(), name='comment-list'),
     path('comments/<int:pk>/', views.CommentDetail.as_view(), name='comment-detail'),
+    path('companies/<int:company_id>/fetch_tweets/', views.fetch_tweets, name='fetch-tweets'),
 ]
